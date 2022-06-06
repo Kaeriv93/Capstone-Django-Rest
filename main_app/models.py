@@ -1,5 +1,8 @@
+from typing import OrderedDict
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils.timezone import now
+
 
 class CustomUser(AbstractUser):
     name = models.CharField(max_length= 100)
@@ -14,3 +17,12 @@ class CustomUser(AbstractUser):
     class Meta:
         ordering=['name']
 
+class Blog(models.Model):
+    content = models.TextField(max_length=2000)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="blogs")
+    published = models.DateTimeField(default=now, editable=False)
+    
+    def __str__(self):
+        return self.content
+    class Meta:
+        ordering=['published']
