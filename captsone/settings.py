@@ -75,15 +75,13 @@ WSGI_APPLICATION = 'captsone.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'capstone',
+        'NAME': 'auth',
     }
 }
 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
-
-AUTH_USER_MODEL = 'main_app.CustomUser'
 
 
 AUTH_PASSWORD_VALIDATORS = [
