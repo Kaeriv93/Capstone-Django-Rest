@@ -34,7 +34,7 @@ def getRoutes(request):
     ]
     return Response(routes)
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def testEndPoint(request):
     if request.method == 'GET':

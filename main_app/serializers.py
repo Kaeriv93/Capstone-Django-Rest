@@ -17,6 +17,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['bio'] = user.bio
         token['avatar'] = user.avatar
         token['location'] = user.location
+        token['date_of_birth'] = str(user.date_of_birth)
     
         return token
 
